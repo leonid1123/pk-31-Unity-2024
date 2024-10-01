@@ -10,6 +10,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float spd;
     bool toRight = true;
+    int apples = 0;
+    public void SetApples(int _applesToAdd)
+    {
+        apples += _applesToAdd;
+    }
+    public int GetApples()
+    {
+        return apples;
+    }
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
