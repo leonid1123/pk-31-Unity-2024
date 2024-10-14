@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     float spd;
     bool toRight = true;
     int apples = 0;
+    bool onGround = false;
     public void SetApples(int _applesToAdd)
     {
         apples += _applesToAdd;
@@ -24,8 +25,28 @@ public class PlayerController : MonoBehaviour
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+        {
+            onGround = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+        {
+            onGround = false;
+        }
+    }
     void Update()
     {
+        if (Input.GetButton("Fire1") & onGround) 
+        {
+            rb2d.AddForce(Vector2.up*10);
+        }
+
+
         mov = Input.GetAxis("Horizontal");
         rb2d.velocity = new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0);
         anim.SetFloat("movement",Mathf.Abs(mov));
