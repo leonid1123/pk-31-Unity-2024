@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Ground")
         {
             onGround = true;
+            anim.SetBool("onLand",true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Ground")
         {
             onGround = false;
+            anim.SetBool("onLand",false);
         }
     }
     void Update()
@@ -44,8 +46,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1") & onGround) 
         {
             rb2d.AddForce(Vector2.up*10);
+            anim.SetTrigger("jump");
         }
 
+        anim.SetFloat("vspeed", rb2d.velocityY);
 
         mov = Input.GetAxis("Horizontal");
         rb2d.velocity = new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0);

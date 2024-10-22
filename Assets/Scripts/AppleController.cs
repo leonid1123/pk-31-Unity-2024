@@ -17,7 +17,7 @@ public class AppleController : MonoBehaviour
         {
             collision.GetComponent<PlayerController>().SetApples(1);
             int apples = collision.GetComponent<PlayerController>().GetApples();
-            GameObject.Find("AppleText").GetComponent<TextMeshProUGUI>().SetText($"ﬂ·ÎÓÍ:{apples}");
+            GameObject.Find("AppleText").GetComponent<TextMeshProUGUI>().SetText($"–Ø–±–ª–æ–∫:{apples}");
             Destroy(this.gameObject);
         }
     }
