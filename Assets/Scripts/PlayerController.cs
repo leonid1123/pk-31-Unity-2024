@@ -43,9 +43,9 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButton("Fire1") & onGround) 
+        if (Input.GetKeyDown(KeyCode.J) & onGround) 
         {
-            rb2d.AddForce(Vector2.up*10);
+            rb2d.AddForce(Vector2.up*8,ForceMode2D.Impulse);
             anim.SetTrigger("jump");
         }
 
