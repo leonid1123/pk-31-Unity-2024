@@ -45,14 +45,15 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J) & onGround) 
         {
-            rb2d.AddForce(Vector2.up*8,ForceMode2D.Impulse);
+            rb2d.AddForce(Vector2.up*12 + rb2d.velocity*0.8f,ForceMode2D.Impulse);
             anim.SetTrigger("jump");
         }
 
         anim.SetFloat("vspeed", rb2d.velocityY);
 
         mov = Input.GetAxis("Horizontal");
-        rb2d.velocity = new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0);
+        //rb2d.velocity = new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0);
+        rb2d.AddForce(new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0));
         anim.SetFloat("movement",Mathf.Abs(mov));
 
         if (rb2d.velocityX>0 & !toRight)
