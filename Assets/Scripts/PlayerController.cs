@@ -4,66 +4,91 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D rb2d;
-    Animator anim;
-    float mov;
+    private Rigidbody2D rb2d;
+    private Animator anim;
+    private float mov;
     [SerializeField]
-    float spd;
-    bool toRight = true;
-    int apples = 0;
-    bool onGround = false;
-    public void SetApples(int _applesToAdd)
+    private float speed;//10, gravity = 3
+    [SerializeField]
+    private float jumpForce;//16
+    private bool facingRight = true;
+    private int apples = 0;
+    private bool onGround = false;
+
+    public void SetApples(int applesToAdd)
     {
-        apples += _applesToAdd;
+        apples += applesToAdd;
     }
+
     public int GetApples()
     {
         return apples;
     }
-    void Start()
+
+    private void Start()
     {
-        rb2d = gameObject.GetComponent<Rigidbody2D>();
-        anim = gameObject.GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.CompareTag("Ground"))
         {
             onGround = true;
-            anim.SetBool("onLand",true);
+            anim.SetBool("onLand", true);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.CompareTag("Ground"))
         {
             onGround = false;
-            anim.SetBool("onLand",false);
+            anim.SetBool("onLand", false);
         }
     }
-    void Update()
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) & onGround) 
+        HandleMovement();
+        HandleJump();
+        UpdateAnimationParameters();
+    }
+
+    private void HandleMovement()
+    {
+        mov = Input.GetAxis("Horizontal");
+        rb2d.velocity = new Vector2(mov * speed, rb2d.velocity.y);
+
+        if (mov > 0 && !facingRight)
         {
-            rb2d.AddForce(Vector2.up*12 + rb2d.velocity*0.8f,ForceMode2D.Impulse);
+            Flip();
+        }
+        else if (mov < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void HandleJump()
+    {
+        if (Input.GetKeyDown(KeyCode.J) && onGround)
+        {
+            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             anim.SetTrigger("jump");
         }
+    }
 
-        anim.SetFloat("vspeed", rb2d.velocityY);
+    private void UpdateAnimationParameters()
+    {
+        anim.SetFloat("vspeed", rb2d.velocity.y);
+        anim.SetFloat("movement", Mathf.Abs(mov));
+    }
 
-        mov = Input.GetAxis("Horizontal");
-        //rb2d.velocity = new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0);
-        rb2d.AddForce(new Vector3(mov*spd*Time.deltaTime,rb2d.velocityY,0));
-        anim.SetFloat("movement",Mathf.Abs(mov));
-
-        if (rb2d.velocityX>0 & !toRight)
-        {
-            gameObject.transform.Rotate(0, 180, 0);
-            toRight = true;
-        } else if(rb2d.velocityX < 0 & toRight)
-        {
-            gameObject.transform.Rotate(0, 180, 0);
-            toRight = false;
-        }
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
     }
 }
