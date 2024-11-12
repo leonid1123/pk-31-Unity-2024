@@ -65,4 +65,20 @@ public class EnemyController : MonoBehaviour
         
         transform.Rotate(0, 180, 0);
     }
+
+    private void OnDrawGizmos()
+    {
+        // Убедитесь, что границы назначены
+        if (boundaryLeft != null && boundaryRight != null)
+        {
+            Gizmos.color = Color.red; // Цвет границ
+
+            // Рисуем линию между левым и правым пределами
+            Gizmos.DrawLine(boundaryLeft.position, boundaryRight.position);
+
+            // Рисуем маленькие линии для обозначения границ
+            Gizmos.DrawSphere(boundaryLeft.position, 0.1f); // Левый предел
+            Gizmos.DrawSphere(boundaryRight.position, 0.1f); // Правый предел
+        }
+    }
 }
