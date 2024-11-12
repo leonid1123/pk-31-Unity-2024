@@ -7,11 +7,14 @@ public class EnemyController : MonoBehaviour
     public float speed = 2f; // Скорость движения
     private bool movingRight = false; // Направление движения
     private Rigidbody2D rb2d; // Компонент Rigidbody2D
+    private Animator anim;
+    private bool alive = true;
     
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>(); // Получаем компонент Rigidbody2D
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -57,6 +60,16 @@ public class EnemyController : MonoBehaviour
         {
             // Логика столкновения с игроком
             Debug.Log("Враг столкнулся с игроком!");
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D coll){
+        if (coll.gameObject.CompareTag("Player"))
+        {
+            anim.SetTrigger("death");
+            alive = false;
+            //Destroy(gameObject);
         }
     }
 
