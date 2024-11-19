@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float speed;//10, gravity = 3
     [SerializeField]
     private float jumpForce;//16
+    [SerializeField]
+    private float test;
     private bool facingRight = true;
     private int apples = 0;
     private bool onGround = false;
@@ -37,6 +39,14 @@ public class PlayerController : MonoBehaviour
         {
             onGround = true;
             anim.SetBool("onLand", true);
+        }
+        if (collision.CompareTag("Enemy"))
+        {
+            Vector3 player = transform.position;
+            Vector3 snail = collision.transform.position;
+            Vector3 pinok = player - snail;
+            rb2d.AddForce(pinok.normalized * test, ForceMode2D.Impulse);
+
         }
     }
 

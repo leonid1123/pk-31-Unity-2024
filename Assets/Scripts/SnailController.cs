@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
@@ -8,13 +10,13 @@ public class EnemyController : MonoBehaviour
     private bool movingRight = false; // Направление движения
     private Rigidbody2D rb2d; // Компонент Rigidbody2D
     private Animator anim;
-    private bool alive = true;
-    
+    private bool isMoving = true;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>(); // Получаем компонент Rigidbody2D
         anim = GetComponent<Animator>();
+        StartCoroutine(StateCoroutine());
     }
 
     void Update()
@@ -25,30 +27,28 @@ public class EnemyController : MonoBehaviour
     private void Move()
     {
         Vector2 movement = Vector2.zero; // Вектор движения
-
-        if (movingRight)
-        {
-            movement = Vector2.right * speed; // Движение вправо
-
-            // Проверка на достижение правой границы
-            if (transform.position.x >= boundaryRight.position.x)
+        if(isMoving){
+            if (movingRight)
             {
-                movingRight = false; // Меняем направление
-                Flip();
+                movement = Vector2.right * speed; // Движение вправо
+                // Проверка на достижение правой границы
+                if (transform.position.x >= boundaryRight.position.x)
+                {
+                    movingRight = false; // Меняем направление
+                    Flip();
+                }
+            }
+            else
+            {
+                movement = Vector2.left * speed; // Движение влево
+                // Проверка на достижение левой границы
+                if (transform.position.x <= boundaryLeft.position.x)
+                {
+                    movingRight = true; // Меняем направление
+                    Flip();
+                }
             }
         }
-        else
-        {
-            movement = Vector2.left * speed; // Движение влево
-
-            // Проверка на достижение левой границы
-            if (transform.position.x <= boundaryLeft.position.x)
-            {
-                movingRight = true; // Меняем направление
-                Flip();
-            }
-        }
-
         // Применяем движение к Rigidbody2D
         rb2d.velocity = new Vector2(movement.x, rb2d.velocity.y);
     }
@@ -59,8 +59,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Логика столкновения с игроком
-            Debug.Log("Враг столкнулся с игроком!");
-            
+            Debug.Log("Враг столкнулся с игроком!");           
         }
     }
 
@@ -68,15 +67,26 @@ public class EnemyController : MonoBehaviour
         if (coll.gameObject.CompareTag("Player"))
         {
             anim.SetTrigger("death");
-            alive = false;
-            //Destroy(gameObject);
+            isMoving = false;
         }
     }
 
     private void Flip()
     {
-        
         transform.Rotate(0, 180, 0);
+    }
+
+    public void Death() //прикрепить к последнему кадру анимации удара
+    {
+        Destroy(gameObject);
+    }
+
+    private IEnumerator StateCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        anim.SetTrigger("changeState");
+        isMoving = !isMoving;
+        StartCoroutine(StateCoroutine());
     }
 
     private void OnDrawGizmos()
