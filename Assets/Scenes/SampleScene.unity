@@ -1885,6 +1885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpForce: 16
+  test: 25
 --- !u!1001 &1300063555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1942,6 +1943,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d93af3eefed5341b8158503c6aa575, type: 3}
+--- !u!1 &1404333078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404333079}
+  m_Layer: 0
+  m_Name: right1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404333079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404333078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.37, y: 0.21, z: 0.007056048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1404645944
 GameObject:
   m_ObjectHideFlags: 3
@@ -2156,6 +2188,37 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.6, y: 0.08}
   m_Direction: 1
+--- !u!1 &1538253932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538253933}
+  m_Layer: 0
+  m_Name: left1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538253933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538253932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.43, y: 0.23, z: 0.007056048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1543949389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +2400,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5436903181724693153, guid: a3936a47d3c732e42b3ff78eda7e8a3c, type: 3}
+      propertyPath: boundaryLeft
+      value: 
+      objectReference: {fileID: 1538253933}
+    - target: {fileID: 5436903181724693153, guid: a3936a47d3c732e42b3ff78eda7e8a3c, type: 3}
+      propertyPath: boundaryRight
+      value: 
+      objectReference: {fileID: 1404333079}
     - target: {fileID: 6464231526595316053, guid: a3936a47d3c732e42b3ff78eda7e8a3c, type: 3}
       propertyPath: m_Name
       value: Snail (1)
@@ -2458,3 +2529,5 @@ SceneRoots:
   - {fileID: 1927466747}
   - {fileID: 1543949390}
   - {fileID: 1864884582}
+  - {fileID: 1538253933}
+  - {fileID: 1404333079}
