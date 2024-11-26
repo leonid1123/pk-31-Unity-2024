@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     private int apples = 0;
     private bool onGround = false;
+    private int HP = 3;
+    public GUIController gui;
 
     public void SetApples(int applesToAdd)
     {
@@ -31,6 +33,18 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Обработка столкновений, если необходимо
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Логика столкновения с врагом
+            Debug.Log("игрок столкнулся с врагом!");
+            HP-=1;
+            gui.SetSprite(HP);           
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

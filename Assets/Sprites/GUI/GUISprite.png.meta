@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: 4da6d7fb01e43214e85f92f15b52e900
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2487357251346610799
+    second: GUISprite_0
+  - first:
+      213: -5662961563439618297
+    second: GUISprite_1
+  - first:
+      213: 917188218553980569
+    second: GUISprite_2
+  - first:
+      213: 8739634473082209670
+    second: GUISprite_3
+  - first:
+      213: -2389778857952874588
+    second: GUISprite_4
+  - first:
+      213: -9118704788917776629
+    second: GUISprite_5
+  - first:
+      213: -8678144991374818049
+    second: GUISprite_6
+  - first:
+      213: 6839792526583950544
+    second: GUISprite_7
+  - first:
+      213: 5681612213659411090
+    second: GUISprite_8
+  - first:
+      213: 2350947443652067680
+    second: GUISprite_9
+  - first:
+      213: 2687829809615431048
+    second: GUISprite_10
+  - first:
+      213: -3726858235845166761
+    second: GUISprite_11
+  - first:
+      213: -5550331178973073657
+    second: GUISprite_12
+  - first:
+      213: -105565228971410673
+    second: GUISprite_13
+  - first:
+      213: 3840899764232944897
+    second: GUISprite_14
+  - first:
+      213: 8701297247057955484
+    second: GUISprite_15
+  - first:
+      213: 25297320351656471
+    second: GUISprite_16
+  - first:
+      213: -1023016437730649392
+    second: GUISprite_17
+  - first:
+      213: 3207138996935160522
+    second: GUISprite_18
+  - first:
+      213: 6303614948148947819
+    second: GUISprite_19
+  - first:
+      213: -339718784610184662
+    second: GUISprite_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GUISprite_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1954efb22c12b7dd0800000000000000
+      internalID: -2487357251346610799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUISprite_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468c752ff35b413429aca6c6cda99350
+      internalID: -1270220219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUISprite_22
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5216db748d97fba4086caadc4f6a4747
+      internalID: 396443989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUISprite_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc854eddbdec32942881cc79ae27bbc1
+      internalID: 730357103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8295aed33a956b74fa029b84b18ee7eb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GUISprite_0: -2487357251346610799
+      GUISprite_1: -5662961563439618297
+      GUISprite_10: 2687829809615431048
+      GUISprite_11: -3726858235845166761
+      GUISprite_12: -5550331178973073657
+      GUISprite_13: -105565228971410673
+      GUISprite_14: 3840899764232944897
+      GUISprite_15: 8701297247057955484
+      GUISprite_16: 25297320351656471
+      GUISprite_17: -1023016437730649392
+      GUISprite_18: 3207138996935160522
+      GUISprite_19: 6303614948148947819
+      GUISprite_2: 917188218553980569
+      GUISprite_20: -339718784610184662
+      GUISprite_21: -1270220219
+      GUISprite_22: 396443989
+      GUISprite_23: 730357103
+      GUISprite_3: 8739634473082209670
+      GUISprite_4: -2389778857952874588
+      GUISprite_5: -9118704788917776629
+      GUISprite_6: -8678144991374818049
+      GUISprite_7: 6839792526583950544
+      GUISprite_8: 5681612213659411090
+      GUISprite_9: 2350947443652067680
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
