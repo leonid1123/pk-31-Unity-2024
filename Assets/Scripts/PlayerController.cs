@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,7 +44,10 @@ public class PlayerController : MonoBehaviour
             // Логика столкновения с врагом
             Debug.Log("игрок столкнулся с врагом!");
             HP-=1;
-            gui.SetSprite(HP);           
+            gui.SetSprite(HP);
+            if (HP<=0) {
+                SceneManager.LoadScene(0);
+            }           
         }
     }
 
@@ -60,7 +64,6 @@ public class PlayerController : MonoBehaviour
             Vector3 snail = collision.transform.position;
             Vector3 pinok = player - snail;
             rb2d.AddForce(pinok.normalized * test, ForceMode2D.Impulse);
-
         }
     }
 

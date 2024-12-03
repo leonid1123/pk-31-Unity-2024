@@ -1886,6 +1886,7 @@ MonoBehaviour:
   speed: 10
   jumpForce: 16
   test: 25
+  gui: {fileID: 1697097174}
 --- !u!1001 &1300063555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2368,10 +2369,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHP: {fileID: 1820339611}
   hearts:
-  - {fileID: -2487357251346610799, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
-  - {fileID: -1270220219, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
-  - {fileID: 396443989, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
   - {fileID: 730357103, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
+  - {fileID: 396443989, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
+  - {fileID: -1270220219, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
+  - {fileID: -2487357251346610799, guid: 4da6d7fb01e43214e85f92f15b52e900, type: 3}
 --- !u!1 &1820339609
 GameObject:
   m_ObjectHideFlags: 0
